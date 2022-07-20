@@ -1,10 +1,15 @@
+import { serialize } from "./serialize";
 import { checkValidly } from "./validator";
 
 const handleChangeInput = (event: InputEvent) => {
-  console.log(event);
   const newValue = (event.target as HTMLInputElement).value;
-  const checkResult = checkValidly(newValue);
-  console.log(checkResult);
+
+  const validlyResult = checkValidly(newValue);
+
+  if (validlyResult.check) {
+    const numArray = newValue.split(",", 200).map((string) => +string.trim());
+    console.log(serialize(numArray));
+  }
 };
 
 export { handleChangeInput };
