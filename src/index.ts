@@ -1,3 +1,5 @@
+import { handleChangeInput } from "./action"
+
 const input = document.getElementById('input') as HTMLImageElement
 
-console.log(input);
+input.onchange = handleChangeInput;
