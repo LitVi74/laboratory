@@ -4,20 +4,14 @@
   "description": "READ ME",
   "main": "index.js",
   "scripts": {
-    "start": "NODE_ENV=development webpack serve --open",
-    "dev": "NODE_ENV=development webpack",
-    "build": "NODE_ENV=production webpack"
+    "start": "webpack serve --mode=development --open",
+    "dev": "webpack --mode=development",
+    "build": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/LitVi74/laboratory.git"
   },
-  "author": "LitVi74",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/LitVi74/laboratory/issues"
-  },
-  "homepage": "https://github.com/LitVi74/laboratory#readme",
   "devDependencies": {
     "html-webpack-plugin": "^5.5.0",
     "ts-loader": "^9.3.1",
