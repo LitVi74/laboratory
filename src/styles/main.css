@@ -26,6 +26,22 @@
     text-align: start;
 }
 
+.selector-button:before {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     z-index: 0;
+ }
+
+.selector-button--text {
+    position: relative;
+    z-index: 1;
+    font-size: .875rem;
+    font-weight: bold;
+}
+
 @keyframes hover-button {
      from {
          width: 0;
@@ -37,19 +53,13 @@
 
 @keyframes target-button {
     from {
-        width: 50%;
+        width: 100%;
     }
     to {
         width: 150%;
     }
 }
 
-.selector-button--text {
-    position: relative;
-    z-index: 1;
-    font-size: .875rem;
-    font-weight: bold;
-}
 
 .serialize {
     background: #276749;
@@ -57,12 +67,6 @@
 }
 
 .serialize:hover:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
     animation-name: hover-button;
     animation-duration: 1s;
     background: repeating-linear-gradient(
@@ -75,13 +79,7 @@
     width: 100%;
 }
 
-.serialize:focus:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
+.serialize:focus:before {
     animation-name: target-button;
     animation-duration: 0.5s;
     background: repeating-linear-gradient(
@@ -100,12 +98,6 @@
 }
 
 .deserialize:hover:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
     animation-name: hover-button;
     animation-duration: 1s;
     background: repeating-linear-gradient(
@@ -118,13 +110,7 @@
     width: 100%;
 }
 
-.deserialize:focus:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    z-index: 0;
+.deserialize:focus:before {
     animation-name: target-button;
     animation-duration: 0.75s;
     background: repeating-linear-gradient(
