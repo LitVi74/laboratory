@@ -1,11 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Document</title>
+	<meta charset="UTF-8">
+	<link type="text/css" href="./styles/main.css">
+	<title>Document</title>
 </head>
 <body>
-  <input id="input" type="text" value="123">
-  <script type="meta" src="./index.ts"></script>
+<section class="page">
+	<nav class="page-selector">
+		<button class="selector-button serialize">
+			<span class="selector-button--text">
+				Serialize
+			</span>
+		</button>
+		<button class="selector-button deserialize">
+			<span class="selector-button--text">
+				Deserialize
+			</span>
+		</button>
+	</nav>
+	<section class="page-serialize">
+		<input id="input" type="text" value="123">
+	</section>
+</section>
+<script type="meta" src="./index.ts"></script>
 </body>
 </html>

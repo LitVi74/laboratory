@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Inter,sans-serif;
+}
+
+.page {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+}
+
+.page-selector {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    background: #1A202C;
+}
+
+.selector-button {
+    position: relative;
+    overflow: hidden;
+    padding: .5rem .75rem;
+    border: none;
+    text-align: start;
+}
+
+@keyframes hover-button {
+     from {
+         width: 0;
+     }
+     to {
+         width: 100%;
+     }
+ }
+
+@keyframes target-button {
+    from {
+        width: 50%;
+    }
+    to {
+        width: 150%;
+    }
+}
+
+.selector-button--text {
+    position: relative;
+    z-index: 1;
+    font-size: .875rem;
+    font-weight: bold;
+}
+
+.serialize {
+    background: #276749;
+    color: #C6F6D5;
+}
+
+.serialize:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    animation-name: hover-button;
+    animation-duration: 1s;
+    background: repeating-linear-gradient(
+        135deg,
+        #48BB78,
+        #48BB78 75%,
+        transparent 75%,
+        transparent 100%
+    );
+    width: 100%;
+}
+
+.serialize:focus:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    animation-name: target-button;
+    animation-duration: 0.5s;
+    background: repeating-linear-gradient(
+            135deg,
+            #48BB78,
+            #48BB78 75%,
+            transparent 75%,
+            transparent 100%
+    );
+    width: 150%;
+}
+
+.deserialize {
+    background: #285E61;
+    color: #B2F5EA;
+}
+
+.deserialize:hover:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    animation-name: hover-button;
+    animation-duration: 1s;
+    background: repeating-linear-gradient(
+            135deg,
+            #38B2AC,
+            #38B2AC 75%,
+            transparent 75%,
+            transparent 100%
+    );
+    width: 100%;
+}
+
+.deserialize:focus:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 0;
+    animation-name: target-button;
+    animation-duration: 0.75s;
+    background: repeating-linear-gradient(
+            135deg,
+            #38B2AC,
+            #38B2AC 75%,
+            transparent 75%,
+            transparent 100%
+    );
+    width: 150%;
+}
