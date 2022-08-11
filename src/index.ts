@@ -9,5 +9,5 @@ const navigateButtons = document.getElementsByClassName('selector-button') as
 input.onchange = handleChangeInput;
 
 for (let navigateButtonsKey in navigateButtons) {
-    navigateButtons.namedItem(navigateButtonsKey).onclick = handleClickNavigationItem
+    navigateButtons[navigateButtonsKey].onclick = handleClickNavigationItem
 }
