@@ -8,19 +8,24 @@
 <body>
 <section class="page">
 	<nav class="page-selector">
-		<button class="selector-button serialize">
+		<button id="serialize" class="selector-button">
 			<span class="selector-button--text">
 				Serialize
 			</span>
 		</button>
-		<button class="selector-button deserialize">
+		<button id="deserialize" class="selector-button">
 			<span class="selector-button--text">
 				Deserialize
 			</span>
 		</button>
 	</nav>
-	<section class="page-serialize">
+	<section class="page-content serialize show">
+		<label for="input">serialize</label>
 		<input id="input" type="text" value="123">
+	</section>
+	<section class="page-content deserialize hide">
+		<label for="deserialize-input">deserialize</label>
+		<input id="deserialize-input" type="text" value="123">
 	</section>
 </section>
 <script type="meta" src="./index.ts"></script>

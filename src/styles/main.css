@@ -61,64 +61,88 @@
 }
 
 
-.serialize {
-    background: #276749;
+#serialize {
+    background: #1C4532;
     color: #C6F6D5;
 }
 
-.serialize:hover:before {
+#serialize:hover:before {
     animation-name: hover-button;
     animation-duration: 1s;
     background: repeating-linear-gradient(
         135deg,
-        #48BB78,
-        #48BB78 75%,
+        #276749,
+        #276749 75%,
         transparent 75%,
         transparent 100%
     );
     width: 100%;
 }
 
-.serialize:focus:before {
+#serialize:target:before {
     animation-name: target-button;
     animation-duration: 0.5s;
     background: repeating-linear-gradient(
             135deg,
-            #48BB78,
-            #48BB78 75%,
+            #276749,
+            #276749 75%,
             transparent 75%,
             transparent 100%
     );
     width: 150%;
 }
 
-.deserialize {
-    background: #285E61;
+#deserialize {
+    background: #1D4044;
     color: #B2F5EA;
 }
 
-.deserialize:hover:before {
+#deserialize:hover:before {
     animation-name: hover-button;
     animation-duration: 1s;
     background: repeating-linear-gradient(
             135deg,
-            #38B2AC,
-            #38B2AC 75%,
+            #285E61,
+            #285E61 75%,
             transparent 75%,
             transparent 100%
     );
     width: 100%;
 }
 
-.deserialize:focus:before {
+#deserialize:target:before {
     animation-name: target-button;
     animation-duration: 0.75s;
     background: repeating-linear-gradient(
             135deg,
-            #38B2AC,
-            #38B2AC 75%,
+            #285E61,
+            #285E61 75%,
             transparent 75%,
             transparent 100%
     );
     width: 150%;
+}
+
+.page-content {
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    padding: 14rem 14rem 0;
+}
+
+.serialize {
+    background-color: #2D3748;
+}
+
+.deserialize {
+    background-color: #2D3748;
+}
+
+.show {
+    display: flex;
+}
+
+.hide {
+    display: none;
 }
