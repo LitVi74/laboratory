@@ -20,12 +20,20 @@
 		</button>
 	</nav>
 	<section class="page-content serialize show">
-		<label for="input">serialize</label>
-		<input id="input" type="text" value="123">
+		<form id="serialize-form" class="page-form">
+			<label for="serialize-input" class="page-title">Serialize</label>
+			<input id="serialize-input" name="numList" class="page-input" type="text" placeholder="Enter a sequence of numbers">
+			<button class="serialize-button">Get string</button>
+			<p id="serialize-response">The result will be displayed here</p>
+		</form>
 	</section>
 	<section class="page-content deserialize hide">
-		<label for="deserialize-input">deserialize</label>
-		<input id="deserialize-input" type="text" value="123">
+		<form id="deserialize-form" class="page-form">
+			<label for="deserialize-input" class="page-title">Deserialize</label>
+			<input id="deserialize-input" name="hexList" class="page-input" type="text" placeholder="Enter string to deserialize">
+			<button class="deserialize-button" type="submit">Get string</button>
+			<p id="deserialize-response">The result will be displayed here</p>
+		</form>
 	</section>
 </section>
 <script type="meta" src="./index.ts"></script>

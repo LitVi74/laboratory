@@ -24,6 +24,11 @@
     padding: .5rem .75rem;
     border: none;
     text-align: start;
+    cursor: pointer;
+}
+
+.selector-button:focus-visible {
+    outline: none;
 }
 
 .selector-button:before {
@@ -71,8 +76,8 @@
     animation-duration: 1s;
     background: repeating-linear-gradient(
         135deg,
-        #276749,
-        #276749 75%,
+        #2F855A,
+        #2F855A 75%,
         transparent 75%,
         transparent 100%
     );
@@ -84,8 +89,8 @@
     animation-duration: 0.5s;
     background: repeating-linear-gradient(
             135deg,
-            #276749,
-            #276749 75%,
+            #2F855A,
+            #2F855A 75%,
             transparent 75%,
             transparent 100%
     );
@@ -102,8 +107,8 @@
     animation-duration: 1s;
     background: repeating-linear-gradient(
             135deg,
-            #285E61,
-            #285E61 75%,
+            #2C7A7B,
+            #2C7A7B 75%,
             transparent 75%,
             transparent 100%
     );
@@ -112,11 +117,11 @@
 
 #deserialize:target:before {
     animation-name: target-button;
-    animation-duration: 0.75s;
+    animation-duration: .75s;
     background: repeating-linear-gradient(
             135deg,
-            #285E61,
-            #285E61 75%,
+            #2C7A7B,
+            #2C7A7B 75%,
             transparent 75%,
             transparent 100%
     );
@@ -124,19 +129,86 @@
 }
 
 .page-content {
-    display: flex;
-    justify-content: center;
-    align-items: start;
     width: 100%;
-    padding: 14rem 14rem 0;
+    padding: 14rem 8rem 0;
+    background-color: #2D3748;
 }
 
 .serialize {
-    background-color: #2D3748;
+    color: #2F855A;
 }
 
 .deserialize {
-    background-color: #2D3748;
+    color: #2C7A7B;
+}
+
+.page-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: .75rem;
+}
+
+.page-title {
+    font-size: x-large;
+}
+
+.page-input {
+    border: none;
+    color: white;
+    background-color: #4A5568;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+}
+
+.page-input:focus-visible {
+    outline: #2b6cb0 solid;
+}
+
+.serialize-button, .deserialize-button {
+    border: solid .125rem;
+    border-radius: .5rem;
+    padding: .5rem 1rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.serialize-button {
+    color: #C6F6D5;
+    background: #276749;
+    border-color: #2F855A #22543D #22543D #2F855A;
+}
+
+.serialize-button:active {
+    border-color: #22543D #2F855A #2F855A #22543D;
+}
+
+.deserialize-button {
+    color: #B2F5EA;
+    background: #285E61;
+    border-color: #2C7A7B #234E52 #234E52 #2C7A7B;
+}
+
+.deserialize-button:active {
+    border-color: #234E52 #2C7A7B #2C7A7B #234E52;
+}
+
+#serialize-response, #deserialize-response {
+    width: 50%;
+    height: 30%;
+    border: .125rem dashed;
+    border-radius: 1rem;
+    padding: .5rem;
+}
+
+#serialize-response {
+    background: #27674933;
+}
+
+#deserialize-response {
+    background: #285E6133;
 }
 
 .show {

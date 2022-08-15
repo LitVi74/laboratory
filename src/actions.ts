@@ -1,14 +1,15 @@
 import { serialize } from "./serialize";
 import { checkValidly } from "./validator";
 
-const handleChangeInput = (event: InputEvent) => {
-  const newValue = (event.target as HTMLInputElement).value;
+const handleSubmitSerializeForm = (event: SubmitEvent) => {
+  event.preventDefault();
+  const form = event.currentTarget as HTMLFormElement;
+  const numList = form.numList.value as string
 
-  const validlyResult = checkValidly(newValue);
-
+  const validlyResult = checkValidly(numList);
   if (validlyResult.check) {
-    const numArray = newValue.split(",", 200).map((string) => +string.trim());
-    console.log(serialize(numArray));
+     const numArray = numList.split(",", 200).map((string) => +string.trim());
+     console.log(serialize(numArray));
   }
 };
 
@@ -29,4 +30,4 @@ const handleClickNavigationItem = (event: MouseEvent) => {
   document.getElementsByClassName(button.id).item(0).classList.add('show');
 }
 
-export { handleChangeInput, handleClickNavigationItem };
+export { handleSubmitSerializeForm, handleClickNavigationItem };

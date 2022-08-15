@@ -1,12 +1,12 @@
 import './styles/main.css';
-import {handleChangeInput, handleClickNavigationItem} from "./actions";
+import {handleSubmitSerializeForm, handleClickNavigationItem} from "./actions";
 
 
-const input = document.getElementById('input') as HTMLImageElement;
+const serializeForm = document.getElementById('serialize-form') as HTMLFormElement
 const navigateButtons = document.getElementsByClassName('selector-button') as
     HTMLCollectionOf<HTMLButtonElement>;
 
-input.onchange = handleChangeInput;
+serializeForm.onsubmit = handleSubmitSerializeForm;
 
 for (let navigateButtonsKey in navigateButtons) {
     navigateButtons[navigateButtonsKey].onclick = handleClickNavigationItem
