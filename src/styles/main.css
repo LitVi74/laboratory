@@ -167,6 +167,15 @@
     outline: #2b6cb0 solid;
 }
 
+.input-error {
+    outline: #C53030 solid;
+}
+
+.error-text {
+    width: 195px;
+    color: #C53030;
+}
+
 .serialize-button, .deserialize-button {
     border: solid .125rem;
     border-radius: .5rem;
@@ -201,6 +210,8 @@
     border: .125rem dashed;
     border-radius: 1rem;
     padding: .5rem;
+    word-break: break-word;
+    overflow-y: auto;
 }
 
 #serialize-response {
