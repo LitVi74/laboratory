@@ -1,7 +1,10 @@
 const deserialize = (numArray: string[]) => {
     return numArray.reduce(
-        (previousValue, currentValue, index) =>
-            previousValue + (index ? "," : "") + parseInt(currentValue,16),
+        (previousValue, currentValue, index) =>{
+            const [hex, count] = currentValue.split('x')
+            const numString = `${parseInt(hex,16)},`.repeat(+count || 1).slice(0, -1);
+            return previousValue + (index ? "," : "") + numString
+        },
         ""
     );
 };

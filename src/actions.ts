@@ -18,7 +18,7 @@ const handleSubmitSerializeForm = (event: SubmitEvent) => {
 
     const textBlock = form.getElementsByTagName('p').item(0);
 
-    const numArray = numList.value.split(",", 200).map((string) => +string.trim());
+    const numArray = numList.value.split(",").map((string) => +string.trim());
     textBlock.textContent = serialize(numArray);
   }else{
     if (!div) {
@@ -53,7 +53,7 @@ const handleSubmitDeserializeForm = (event: SubmitEvent) => {
 
     const textBlock = form.getElementsByTagName('p').item(0);
 
-    const hexArray = hexList.value.split(",", 200).map((string) => string.trim());
+    const hexArray = hexList.value.split(",").map((string) => string.trim());
     textBlock.textContent = deserialize(hexArray);
   }else{
     if (!div) {

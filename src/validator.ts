@@ -9,11 +9,11 @@ const validation = {
     errorMassage: "only numeric values are allowed",
   },
   isTooBig: {
-    regExp: /(?!(?:\d{1,3}|1000)(?!\d))\d+/,
+    regExp: /(?!(?:\d{1,2}|[12]\d{2}|300)(?!\d))\d+/,
     errorMassage: "number is too big",
   },
   isNotHex: {
-    regExp: /[G-Z]|[g-z]/,
+    regExp: /[G-Z]|[g-w][yz]/,
     errorMassage: "only HEX values are allowed",
   }
 };
