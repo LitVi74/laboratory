@@ -1,5 +1,6 @@
-import { serialize } from "./serialize";
-import { checkValidly } from "./validator";
+import {serialize} from "./serialize";
+import {checkValidly} from "./validator";
+import {deserialize} from "./deserialize";
 
 const handleSubmitSerializeForm = (event: SubmitEvent) => {
   event.preventDefault();
@@ -33,6 +34,41 @@ const handleSubmitSerializeForm = (event: SubmitEvent) => {
   }
 };
 
+const handleSubmitDeserializeForm = (event: SubmitEvent) => {
+  event.preventDefault();
+
+  const form = event.currentTarget as HTMLFormElement;
+  const hexList = form.getElementsByTagName('input').item(0);
+  let div = document.getElementById('deserialize-error-text');
+
+  const validlyResult = checkValidly(
+      hexList.value,
+      ['isNotHex']
+  );
+  if (validlyResult.check) {
+    if (hexList.classList.contains('input-error')){
+      hexList.classList.remove('input-error')
+      form.removeChild(div)
+    }
+
+    const textBlock = form.getElementsByTagName('p').item(0);
+
+    const hexArray = hexList.value.split(",", 200).map((string) => string.trim());
+    textBlock.textContent = deserialize(hexArray);
+  }else{
+    if (!div) {
+      div = document.createElement('div');
+      div.classList.add('error-text');
+      div.id = 'deserialize-error-text';
+    }
+
+    div.textContent = validlyResult.error;
+
+    hexList.classList.add('input-error');
+    form.insertBefore(div, hexList.nextSibling)
+  }
+}
+
 const handleClickNavigationItem = (event: MouseEvent) => {
   const button = event.currentTarget as HTMLButtonElement;
 
@@ -50,4 +86,4 @@ const handleClickNavigationItem = (event: MouseEvent) => {
   document.getElementsByClassName(button.id).item(0).classList.add('show');
 }
 
-export { handleSubmitSerializeForm, handleClickNavigationItem };
+export { handleSubmitSerializeForm, handleSubmitDeserializeForm, handleClickNavigationItem };

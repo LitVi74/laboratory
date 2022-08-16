@@ -4,7 +4,7 @@ type TCheckValidly = {
 };
 
 const validation = {
-  isNumber: {
+  isNotNumber: {
     regExp: /[A-Za-z]/,
     errorMassage: "only numeric values are allowed",
   },
@@ -12,11 +12,16 @@ const validation = {
     regExp: /(?!(?:\d{1,3}|1000)(?!\d))\d+/,
     errorMassage: "number is too big",
   },
+  isNotHex: {
+    regExp: /[G-Z]|[g-z]/,
+    errorMassage: "only HEX values are allowed",
+  }
 };
 
-const checkValidly = (string: string): TCheckValidly => {
-  let key: keyof typeof validation;
-  for (key in validation) {
+const checkValidly = (string: string, rules?: Array<keyof typeof validation>): TCheckValidly => {
+
+  const keys = [...rules] ?? Object.keys(validation) as  Array<keyof typeof validation>;
+  for (let key of keys) {
     const checkRule = validation[key].regExp.test(string);
 
     if (checkRule)
